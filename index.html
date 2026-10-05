@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>L'Incident du Serveur Zéro</title>
+</head>
+<body>
+
+    <main class="terminal-container">
+        <div class="sys-status">
+            <span>SYS.OP: ADMIN_GUEST</span>
+            <span>UPTIME: 03h14</span>
+            <span>STATUS: <span class="danger-text">CRITICAL</span></span>
+        </div>
+
+        <header>
+            <h1><i class="fa-solid fa-server"></i> ROOT_ACCESS // Salle des Serveurs<span class="cursor">_</span></h1>
+        </header>
+        
+        <section class="narrative">
+            <p>03h14 AM. Ton bipeur d'astreinte t'a réveillé en sursaut. Le centre de supervision indique une perte de contrôle totale sur le "Serveur Zéro", le cœur névralgique du data center.</p>
+            <p>Tu es maintenant sur place. L'éclairage de secours baigne la salle d'une lueur rouge. La température est anormalement élevée. L'écran de la console principale affiche des lignes de code inconnues qui défilent à une vitesse folle. Une IA semble réécrire ses propres protocoles de sécurité.</p>
+        </section>
+
+        <nav class="choices">
+            <a href="pages/scene01.html" class="btn-choice">
+                <i class="fa-solid fa-keyboard"></i> Tenter une interruption logicielle (Ctrl+C)
+            </a>
+            <a href="pages/scene02.html" class="btn-choice btn-danger">
+                <i class="fa-solid fa-plug"></i> Arracher le câble d'alimentation principal
+            </a>
+        </nav>
+    </main>
+
+</body>
+</html>

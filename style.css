@@ -1,0 +1,143 @@
+:root {
+    --bg-color: #050505;
+    --text-terminal: #00ff41;
+    --text-reading: #c9d1d9;
+    --accent-danger: #ff003c;
+    --border-color: #1f2937;
+}
+
+body {
+    background-color: var(--bg-color);
+    
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url('assets/backgrounds/background.gif');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    color: var(--text-reading);
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.terminal-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75); 
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.1), inset 0 0 15px rgba(0, 255, 65, 0.05);
+    animation: bootUp 1.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.sys-status {
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.danger-text {
+    color: var(--accent-danger);
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+h1 {
+    color: var(--text-terminal);
+    font-size: 1.6rem;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    padding-bottom: 15px;
+    margin-top: 0;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    letter-spacing: -1px;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+.narrative p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 45px;
+}
+
+.btn-choice {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 255, 65, 0.03);
+    color: var(--text-terminal);
+    text-decoration: none;
+    padding: 18px 25px;
+    border: 1px solid var(--text-terminal);
+    border-left: 6px solid var(--text-terminal); 
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-choice:hover {
+    background: var(--text-terminal);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    transform: translateX(10px); 
+}
+
+.btn-danger {
+    color: var(--accent-danger);
+    border-color: var(--accent-danger);
+    border-left-color: var(--accent-danger);
+    background: rgba(255, 0, 60, 0.03);
+}
+
+.btn-danger:hover {
+    background: var(--accent-danger);
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.5);
+}
+
+.btn-choice i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes bootUp {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.95) translateY(20px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+}
